@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Review id="AUTHORITY_REVIEW01">
+  <ReviewIssue id="HTZVLVJ2">
+    <ReviewIssueMeta>
+      <CreationDate format="yyyy-MM-dd :: HH:mm:ss:SSS z">2014-04-14 :: 22:48:02:270 CST</CreationDate>
+      <LastModificationDate format="yyyy-MM-dd :: HH:mm:ss:SSS z">2014-04-14 :: 22:59:09:650 CST</LastModificationDate>
+    </ReviewIssueMeta>
+    <ReviewerId>lyc</ReviewerId>
+    <AssignedTo>lyc</AssignedTo>
+    <File line="3">src/edu/jyu/stumgm/interceptor/SecurityInterceptor.java</File>
+    <Type>item.type.label.programLogic</Type>
+    <Severity>item.severity.label.major</Severity>
+    <Summary>拦截器未定义</Summary>
+    <Description>拦截器未定义</Description>
+    <Annotation></Annotation>
+    <Revision></Revision>
+    <Resolution>item.resolution.label.validNeedsfixing</Resolution>
+    <Status>item.status.label.open</Status>
+  </ReviewIssue>
+</Review>

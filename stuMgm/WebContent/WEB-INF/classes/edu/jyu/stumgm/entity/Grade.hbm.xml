@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="edu.jyu.stumgm.entity">
+	<class name="Grade" table="grade">
+		<id name="id" column="grade_id">
+			<generator class="native" />
+		</id>
+		<property name="numElectron" type="int" column="electron"></property>
+		<property name="numSoftware" type="int" column="software"></property>
+		<property name="numSecurity" type="int" column="security"></property>
+		<property name="numJava" type="int" column="java"></property>
+		<property name="numDB" type="int" column="db"></property>
+
+		<property name="numImage" type="int" column="img"></property>
+		<property name="numDistributed" type="int" column="distributed"></property>
+		<property name="numTest" type="int" column="test"></property>
+		
+		<many-to-one name="student" class="Student" column="student_id" unique="true"></many-to-one>
+
+	</class>
+</hibernate-mapping>

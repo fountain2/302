@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Review id="REV_STUDENTMan_01">
+  <ReviewIssue id="HUKGAF7W">
+    <ReviewIssueMeta>
+      <CreationDate format="yyyy-MM-dd :: HH:mm:ss:SSS z">2014-04-29 :: 08:22:23:372 CST</CreationDate>
+      <LastModificationDate format="yyyy-MM-dd :: HH:mm:ss:SSS z">2014-04-29 :: 10:26:56:975 CST</LastModificationDate>
+    </ReviewIssueMeta>
+    <ReviewerId>anotherLYC</ReviewerId>
+    <AssignedTo>anotherLYC</AssignedTo>
+    <File></File>
+    <Type>item.label.unset</Type>
+    <Severity>item.severity.label.critical</Severity>
+    <Summary>fdfs</Summary>
+    <Description>fsdf</Description>
+    <Annotation></Annotation>
+    <Revision></Revision>
+    <Resolution>item.resolution.label.validNeedsfixing</Resolution>
+    <Status>item.status.label.open</Status>
+  </ReviewIssue>
+</Review>
