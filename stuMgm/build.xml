@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="${webapp.name}" default="start" basedir="F:\E_drive\shareSpace\build" >
+    <property file="G:\lyc\development\workspace\stuMgm\build.properties" />
+    <property name="complile.dir" location="${basedir}/classes"/>
+    <property name="src.dir" value="${basedir}/src"/>
+    <property name="lib.dir" value="${basedir}/lib"/>
+    <property name="dist.dir" value="${basedir}/dist"/>
+
+
+   <!-- ================================= 
+          第一步：创建各类资源目录：源代码、jar库、编译中间目录、发布资源目录              
+         ================================= -->
+
+    <target name="init" description="初始化：创建各类目录">
+    	<echo message="-----------初始化-------------" />
+       <delete dir="${complile.dir}"/>
+       <mkdir dir="${complile.dir}"/>
+	   <delete dir="${src.dir}"/>
+       <mkdir dir="${src.dir}"/>
+	   <delete dir="${lib.dir}"/>
+       <mkdir dir="${lib.dir}"/>
+	   <delete dir="${dist.dir}"/>
+       <mkdir dir="${dist.dir}"/>
+ 	   <delete dir="${basedir}/SVN"/>
+       <mkdir dir="${basedir}/SVN"/>
+  	   <delete dir="${basedir}/SVN/${project.name}"/>
+       <mkdir dir="${basedir}/SVN/${project.name}" />
+    </target>
+
+	<!--  Ant 第三方自定义任务：SVN任务定义 -->
+    <taskdef name="svn" classname="org.tigris.subversion.svnant.SvnTask" />
+ 	 <!-- ================================= 
+	          第二步：从svn服务器获取最新版本的资源              
+	         ================================= -->
+	<typedef  
+	          resource="org/tigris/subversion/svnant/svnantlib.xml" />
+	<svnSetting id="svn.settings" svnkit="false" javahl="false" username="${svn.username}" password="${svn.password}"/> 
+	<target name="svn.checkout" depends="init">
+    	<echo message="-----------获取SVN最新资源-------------" />
+	       <svn refid="svn.settings">
+	         <checkout recurse="true" url="${svn.url}" destPath="${basedir}/SVN/${project.name}"></checkout> 
+	       </svn>
+	</target>
+	  	
+	<target name="compile.prepared" depends="svn.checkout">
+    	<echo message="-----------将最新资源复制到待编译文件夹-------------" />
+	   <copy includeemptydirs="false" todir="${src.dir}">
+	   <fileset dir="${basedir}/SVN/${project.name}/src" />
+	   </copy>
+	   <copy includeemptydirs="false" todir="${lib.dir}">
+	   <fileset dir="${basedir}/SVN/${project.name}/WebContent/WEB-INF/lib" />
+	   </copy>
+    </target>
+    
+    
+    <path id="complile.classpath">
+       <fileset dir="${catalina.lib}">
+          <include name="*.jar"/>
+       </fileset>
+        <fileset dir="${lib.dir}">
+          <include name="*.jar"/>
+        </fileset>
+    </path>
+    
+    <!-- ================================= 
+          第三步：javac编译              
+         ================================= -->
+        
+    <target name="complile" depends="compile.prepared">
+    	<echo message="-----------编译源代码-------------" />
+        <javac encoding="UTF-8" srcdir="${src.dir}" destdir="${complile.dir}">
+                <classpath path="${complile.dir}" />
+                <classpath refid="complile.classpath"/>
+        </javac>
+    	<!-- 别忘了要拷贝struts2的xml配置文件 -->
+ 	   <copy includeemptydirs="false" todir="${complile.dir}">
+ 	   <fileset dir="${basedir}/SVN/${project.name}/src">
+ 	   	<include name="**/*.xml"/>
+ 	   </fileset>
+ 	   </copy>
+    	<!-- 别忘了要拷贝hibernate的xml配置文件 -->
+  	   <copy includeemptydirs="false" todir="${complile.dir}/edu/jyu/stumgm/entity">
+  	   <fileset dir="${basedir}/SVN/${project.name}/src/edu/jyu/stumgm/entity">
+  	   	<include name="**/*.xml"/>
+  	   </fileset>
+  	   </copy>
+
+    </target>
+
+    <!-- ================================= 
+          第四步：打包成war              
+         ================================= -->
+ 
+    <target name="war" depends="complile">
+    	<echo message="-----------生成待部署war包-------------" />
+        <delete>
+            <fileset dir="${dist.dir}" includes="**/*.war" />
+        </delete> 
+	    <tstamp/>
+       <war destfile="${dist.dir}/${webapp.name}.war" webxml="${basedir}/SVN/stuMgm/WebContent/WEB-INF/web.xml">
+          <classes dir="${complile.dir}"/>
+        <fileset dir="${basedir}/SVN/stuMgm/WebContent" id="dir">
+                       <include name="**/*.*"/>
+                       <exclude name="WEB-INF"/>
+        </fileset>
+       </war>
+    </target>
+    
+    <!-- ================================= 
+          第五步：通过ftp将war上传到Tomcat服务器          
+          需要将jar包：jakarta-oro-2.0.8.jar和commons-net-3.3.jar放到%ANT_HOME%/lib目录    
+         ================================= -->
+   <target name="upload" depends="war">
+	<echo message="-----------通过ftp上传待部署war-------------" />
+        <ftp password="${ftp.password}" 
+            server="${ftp.server}" 
+            userid="${ftp.userid}"
+            remotedir="${catalina.apps}"
+            binary="true"
+            >
+            <fileset file="${dist.dir}/${webapp.name}.war"/>
+        </ftp>
+    </target>
+    
+                <!-- ================================= 
+                  clean files              
+                 ================================= -->
+
+    <target name="cleanAll"> 
+       <delete dir="${complile.dir}"/>
+	   <delete dir="${src.dir}"/>
+	   <delete dir="${lib.dir}"/>
+ 	   <delete dir="${basedir}/SVN"/>
+    </target>
+       	
+
+	
+    <!--  Ant 第三方自定义任务：Tomcat任务定义
+    需要将jar包：catalina-5.5.23.jar, catalina-ant-5.5.23.jar放到%ANT_HOME%/lib目录 -->
+    <taskdef name="deploy" classname="org.apache.catalina.ant.DeployTask" />
+    <taskdef name="undeploy" classname="org.apache.catalina.ant.UndeployTask" />
+    <taskdef name="remove" classname="org.apache.catalina.ant.RemoveTask" />
+    <taskdef name="reload" classname="org.apache.catalina.ant.ReloadTask" />
+    <taskdef name="start" classname="org.apache.catalina.ant.StartTask" />
+    <taskdef name="stop" classname="org.apache.catalina.ant.StopTask" />
+    <taskdef name="list" classname="org.apache.catalina.ant.ListTask" />
+    <taskdef name="just_start" classname="org.apache.catalina.ant.StartTask" />
+    
+    
+    <!-- ================================= 
+          部署target定义              
+         ================================= -->
+
+    <target name="deploy" depends="war">
+    	<echo message="-----------远程部署（deploy）Tomcat工程-------------" />
+         <deploy url="${tomcat.manager.url}" 
+                 username="${tomcat.manager.username}"
+                  password="${tomcat.manager.password}"
+                  path="/${webapp.name}" 
+                  war="file:${basedir}/${webapp.name}.war" />
+    </target>
+    
+    <target name="undeploy">
+    	<echo message="-----------远程卸载（undeploy）Tomcat工程-------------" />
+        <undeploy url="${tomcat.manager.url}"
+                  username="${tomcat.manager.username}"
+                  password="${tomcat.manager.password}"
+                  path="/${webapp.name}"/>
+    </target>
+    
+    <target name="remove">
+    	<echo message="-----------远程解除（remove）Tomcat工程-------------" />
+        <remove url="${tomcat.manager.url}"
+                  username="${tomcat.manager.username}"
+                  password="${tomcat.manager.password}"
+                  path="/${webapp.name}"/>
+    </target>
+    
+    
+    <target name="reload">
+    	<echo message="-----------远程重新加载（reload）Tomcat工程-------------" />
+       <reload url="${tomcat.manager.url}"
+                 username="${tomcat.manager.username}"
+                 password="${tomcat.manager.password}"
+                 path="/${webapp.name}"/>
+    </target>
+    
+    <target name="start" depends="upload">
+    	<echo message="-----------远程启动（start）Tomcat服务器-------------" />
+       <start url="${tomcat.manager.url}"
+                 username="${tomcat.manager.username}"
+                 password="${tomcat.manager.password}"
+                 path="/${webapp.name}"/>
+    </target>
+
+	<target name="just_start" >
+    	<echo message="-----------远程启动（start）Tomcat服务器-------------" />
+       <start url="${tomcat.manager.url}"
+                 username="${tomcat.manager.username}"
+                 password="${tomcat.manager.password}"
+                 path="/${webapp.name}"/>
+    </target>
+    
+    <target name="stop">
+    	<echo message="-----------远程停止（stop）Tomcat工程-------------" />
+       <stop url="${tomcat.manager.url}"
+                 username="${tomcat.manager.username}"
+                 password="${tomcat.manager.password}"
+                 path="/${webapp.name}"/>
+    </target>
+    
+    <target name="list">
+       <list url="${tomcat.manager.url}"
+                 username="${tomcat.manager.username}"
+                 password="${tomcat.manager.password}"/>
+    </target>
+
+    <!-- ================================= 
+          target: tomcat shell              
+         ================================= -->
+    
+
+    <target name="tomcat.start">
+    	<echo message="-----------启动（start）本地Tomcat服务器-------------" />
+         <java jar="${catalina.home}/bin/bootstrap.jar" fork="true">
+             <jvmarg value="-Dcatalina.home=${catalina.home}"/>
+         </java>
+    </target>
+
+     <target name="tomcat.stop">
+    	<echo message="-----------停止（stop）本地Tomcat服务器-------------" />
+             <java jar="${catalina.home}/bin/bootstrap.jar" fork="true">
+                 <jvmarg value="-Dcatalina.home=${catalina.home}"/>
+                 <arg line="stop"/>
+             </java>
+     </target>
+    
+     <target name="tomcat.debug">
+             <java jar="${catalina.home}/bin/bootstrap.jar" fork="true">
+                 <jvmarg value="-Dcatalina.home=${catalina.home}"/>
+                 <jvmarg value="-Xdebug"/>
+                 <jvmarg value="-Xrunjdwp:transport=dt_socket,address=8000,server=y,suspend=n"/>
+             </java>
+     </target>     
+</project>

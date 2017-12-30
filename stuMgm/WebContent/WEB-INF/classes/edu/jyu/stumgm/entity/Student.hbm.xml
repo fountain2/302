@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="edu.jyu.stumgm.entity">
+	<class name="Student" table="STUDENT">
+		<id name="stuNumber" column="stu_number" type="string">
+			<generator class="assigned" />
+		</id>
+		<property name="username"  length="20" column="name" type="string"></property>
+		<property name="gender" length="4" type="string"></property>
+		<property name="city" length="20" type="string"></property>
+		<property name="identityID" length="20" type="string" column="id_number"></property>
+		<property name="phone" length="20" type="string"></property>
+
+		<property name="email" length="20" type="string"></property>
+		<property name="postID" length="20" type="string" column="post_code"></property>
+		<property name="address" length="20" type="string"></property>
+		
+		<one-to-one name="grade" property-ref="student" class="Grade" cascade="all" fetch="join" ></one-to-one>
+	</class>
+</hibernate-mapping>
