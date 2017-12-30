@@ -1,0 +1,191 @@
+
+
+BODY {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FONT-SIZE: 12px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+.updown {
+	SCROLLBAR-FACE-COLOR: #ffe48b; SCROLLBAR-HIGHLIGHT-COLOR: #ffe48b; OVERFLOW: auto; WIDTH: 500px; SCROLLBAR-SHADOW-COLOR: #999999; SCROLLBAR-3DLIGHT-COLOR: #000000; SCROLLBAR-ARROW-COLOR: #000000; SCROLLBAR-TRACK-COLOR: #ffffff; SCROLLBAR-DARKSHADOW-COLOR: #ffe48b; HEIGHT: 140px
+}
+.updown1 {
+	SCROLLBAR-FACE-COLOR: #ffe48b; SCROLLBAR-HIGHLIGHT-COLOR: #ffe48b; OVERFLOW: auto; WIDTH: 500px; SCROLLBAR-SHADOW-COLOR: #999999; SCROLLBAR-3DLIGHT-COLOR: #000000; SCROLLBAR-ARROW-COLOR: #000000; SCROLLBAR-TRACK-COLOR: #ffffff; SCROLLBAR-DARKSHADOW-COLOR: #ffe48b; HEIGHT: 130px
+}
+.updown2 {
+	SCROLLBAR-FACE-COLOR: #ffe48b; SCROLLBAR-HIGHLIGHT-COLOR: #ffe48b; OVERFLOW: auto; WIDTH: 756px; SCROLLBAR-SHADOW-COLOR: #999999; SCROLLBAR-3DLIGHT-COLOR: #000000; SCROLLBAR-ARROW-COLOR: #000000; SCROLLBAR-TRACK-COLOR: #ffffff; SCROLLBAR-DARKSHADOW-COLOR: #ffe48b; HEIGHT: 150px
+}
+.updown3 {
+	SCROLLBAR-FACE-COLOR: #ffe48b; SCROLLBAR-HIGHLIGHT-COLOR: #ffe48b; OVERFLOW: auto; WIDTH: 100%; SCROLLBAR-SHADOW-COLOR: #ffe48b; SCROLLBAR-3DLIGHT-COLOR: #ffe48b; SCROLLBAR-ARROW-COLOR: #000000; SCROLLBAR-TRACK-COLOR: #ffffff; SCROLLBAR-DARKSHADOW-COLOR: #ffe48b; HEIGHT: 260px
+}
+TD {
+	FONT-SIZE: 12px
+}
+.td {
+	FONT-SIZE: 12px
+}
+.bigfont {
+	FONT-SIZE: 14px
+}
+.white {
+	FONT-SIZE: 14px; COLOR: #ffffff
+}
+.bigsmall {
+	FONT-SIZE: 12px; COLOR: #ffffff
+}
+.bgwhite {
+	BACKGROUND-COLOR: #ffffff
+}
+.bgwhite2 {
+	BACKGROUND-COLOR: #ffffff
+}
+.line {
+	WIDTH: 800px; max-width: 800px
+}
+.line1 {
+	FONT-SIZE: 14px; LINE-HEIGHT: 22px; LETTER-SPACING: 1px
+}
+.hdtop {
+	BORDER-TOP: #ad0000 4px solid; BORDER-BOTTOM: #ffffff 1px solid; BACKGROUND-COLOR: #ad0000
+}
+.hdbot {
+	BORDER-TOP: #df9a99 1px dotted
+}
+.footer {
+	BORDER-TOP: #444444 5px solid; BACKGROUND-COLOR: #eeeeee
+}
+.leftbg {
+	BACKGROUND-COLOR: #f0a744
+}
+.lefttdbg {
+	BACKGROUND-COLOR: #c05601
+}
+A:link {
+	COLOR: #990000; TEXT-DECORATION: none
+}
+A:visited {
+	COLOR: #990000; TEXT-DECORATION: none
+}
+A:active {
+	COLOR: #990000; TEXT-DECORATION: none
+}
+A:hover {
+	COLOR: #990000; TEXT-DECORATION: underline
+}
+.a2:link {
+	COLOR: #336699; TEXT-DECORATION: underline
+}
+.a2:visited {
+	COLOR: #336699; TEXT-DECORATION: underline
+}
+.a2:active {
+	COLOR: #336699; TEXT-DECORATION: underline
+}
+.a2:hover {
+	COLOR: #cc6600; TEXT-DECORATION: none
+}
+.a1:link {
+	COLOR: #336699; TEXT-DECORATION: none
+}
+.a1:visited {
+	COLOR: #336699; TEXT-DECORATION: none
+}
+.a1:active {
+	COLOR: #336699; TEXT-DECORATION: none
+}
+.a1:hover {
+	COLOR: #000000; TEXT-DECORATION: none
+}
+.lefta:link {
+	FONT-SIZE: 12px; WIDTH: 100%; COLOR: #336699; PADDING-TOP: 5px; HEIGHT: 100%; BACKGROUND-COLOR: #ffe48b; TEXT-DECORATION: none
+}
+.lefta:visited {
+	FONT-SIZE: 12px; WIDTH: 100%; COLOR: #336699; PADDING-TOP: 5px; HEIGHT: 100%; BACKGROUND-COLOR: #ffe48b; TEXT-DECORATION: none
+}
+.lefta:active {
+	FONT-SIZE: 12px; WIDTH: 100%; COLOR: #336699; PADDING-TOP: 5px; HEIGHT: 100%; BACKGROUND-COLOR: #ffe48b; TEXT-DECORATION: none
+}
+.lefta:hover {
+	FONT-SIZE: 12px; WIDTH: 100%; COLOR: #ffffff; PADDING-TOP: 5px; HEIGHT: 100%; BACKGROUND-COLOR: #e98d12; TEXT-DECORATION: none
+}
+.text {
+	BORDER-RIGHT: #a5a6a5 1px solid; BORDER-TOP: #a5a6a5 1px solid; PADDING-LEFT: 3px; FONT-SIZE: 12px; BORDER-LEFT: #a5a6a5 1px solid; COLOR: #0f3770; BORDER-BOTTOM: #a5a6a5 1px solid; HEIGHT: 16px
+}
+.login_text1 {
+	BORDER-RIGHT: #a5a6a5 1px solid; BORDER-TOP: #a5a6a5 1px solid; PADDING-LEFT: 3px; FONT-SIZE: 12px; BORDER-LEFT: #a5a6a5 1px solid; WIDTH: 100px; COLOR: #0f3770; BORDER-BOTTOM: #a5a6a5 1px solid; HEIGHT: 16px
+}
+.login_text2 {
+	BORDER-RIGHT: #a5a6a5 1px solid; BORDER-TOP: #a5a6a5 1px solid; PADDING-LEFT: 3px; FONT-SIZE: 12px; BORDER-LEFT: #a5a6a5 1px solid; WIDTH: 40px; COLOR: #0f3770; BORDER-BOTTOM: #a5a6a5 1px solid; HEIGHT: 16px
+}
+.text2 {
+	BORDER-RIGHT: #a5a6a5 1px solid; BORDER-TOP: #a5a6a5 1px solid; FONT-SIZE: 14px; BORDER-LEFT: #a5a6a5 1px solid; COLOR: #0f3770; BORDER-BOTTOM: #a5a6a5 1px solid
+}
+.button {
+	BORDER-RIGHT: #000000 1px solid; BORDER-TOP: #000000 1px solid; FONT-SIZE: 12px; BORDER-LEFT: #000000 1px solid; WIDTH: 60px; COLOR: #000000; PADDING-TOP: 2px; BORDER-BOTTOM: #000000 1px solid; HEIGHT: 20px; BACKGROUND-COLOR: #eeeeee
+}
+.button2 {
+	BORDER-RIGHT: #000000 1px solid; BORDER-TOP: #000000 1px solid; FONT-SIZE: 12px; BORDER-LEFT: #000000 1px solid; WIDTH: 50px; COLOR: #000000; PADDING-TOP: 2px; BORDER-BOTTOM: #000000 1px solid; HEIGHT: 20px; BACKGROUND-COLOR: #eeeeee
+}
+.button21 {
+	BORDER-RIGHT: #000000 1px solid; BORDER-TOP: #000000 1px solid; FONT-SIZE: 12px; BORDER-LEFT: #000000 1px solid; WIDTH: 100px; COLOR: #000000; PADDING-TOP: 2px; BORDER-BOTTOM: #000000 1px solid; HEIGHT: 20px; BACKGROUND-COLOR: #eeeeee
+}
+.button22 {
+	BORDER-RIGHT: #000000 1px solid; BORDER-TOP: #000000 1px solid; FONT-SIZE: 12px; BORDER-LEFT: #000000 1px solid; WIDTH: 150px; COLOR: #000000; PADDING-TOP: 2px; BORDER-BOTTOM: #000000 1px solid; HEIGHT: 20px; BACKGROUND-COLOR: #eeeeee
+}
+.content {
+	BACKGROUND-COLOR: #cccccc
+}
+.content1 {
+	COLOR: #444444; BACKGROUND-COLOR: #eeeeee
+}
+.content2 {
+	BACKGROUND-COLOR: #ffffff
+}
+.fontcolor {
+	COLOR: #c05601
+}
+.hrcolor {
+	COLOR: #000000; HEIGHT: 1px
+}
+INPUT {
+	FONT-SIZE: 12px
+}
+.bordercolor_main {
+	BORDER-RIGHT: #336699 1px dotted; BORDER-TOP: #336699 1px dotted; BORDER-LEFT: #336699 1px dotted; BORDER-BOTTOM: #336699 1px dotted
+}
+  td.header-left {
+    text-align: left;
+    vertical-align: top;
+    font-family:sans-serif,Tahoma,Arial;
+    font-weight: bold;
+    background: #FFDC75;
+  }
+  td.header-center {
+    text-align: center;
+    vertical-align: top;
+    font-family:sans-serif,Tahoma,Arial;
+    font-weight: bold;
+    background: #FFDC75;
+  }
+  td.page-title {
+    text-align: center;
+    vertical-align: top;
+    font-family:sans-serif,Tahoma,Arial;
+    font-weight: bold;
+    color: black;
+  }
+   td.row-left {
+    text-align: left;
+    vertical-align: middle;
+    font-family:sans-serif,Tahoma,Arial;
+    color: black;
+  }
+  td.row-center {
+    text-align: center;
+    vertical-align: middle;
+    font-family:sans-serif,Tahoma,Arial;
+    color: black;
+  }
+  td.row-right {
+    text-align: right;
+    vertical-align: middle;
+    font-family:sans-serif,Tahoma,Arial;
+    color: black;
+  }

@@ -1,0 +1,94 @@
+.main-top {
+	width: 776px;
+	margin: 0 auto;
+	padding-top: 10px;
+	height: 30px;
+	text-align: center;
+	background-color: #efefef;
+	line-height: 25px;
+	border: 1px solid #ffffff;
+	border-bottom: 0px;
+}
+
+.main-top .title {
+	font-weight: bold;
+	font-size: 14px;
+}
+
+.main-top .tip {
+	color: #FF3300;
+}
+
+.main-body {
+	width: 776px;
+	margin: 0 auto;
+	padding-top: 10px;
+	height: 480px;
+	text-align: center;
+	background-color: #efefef;
+	border: 1px solid #ffffff;
+	border-top: 0px;
+}
+
+.search-line{
+	height:30px;
+}
+		
+.main-table {
+	width: 98%;
+	border: 0px;
+	text-align: center;
+	background-color:white;
+	border:1px solid #56B205;
+	border-collapse: collapse;
+	margin:0 auto;
+}
+.main-table .title{
+	font-weight:bold;
+	text-align:center;
+}
+.main-table tr, .main-table td{
+	border:1px solid #56B205;
+}
+.main-table tr.light{
+	background-color:#f7f7f7;
+}
+.main-table tr span.tip{
+	color:red;
+}
+.main-table tr{
+	line-height: 28px;
+}
+.main-table tr td{
+	text-align:left;
+	padding-left:10px;
+}
+
+.main-table tr td.num{
+	text-align:right;
+	padding-right:10px;
+}
+
+.main-table tr td.first{
+	text-align:left;
+	width:25%;
+	padding-right:10px;
+}
+.main-table tr td.name{
+	text-align:right;
+	width:35px;
+	padding-right:10px;
+}
+.main-table tr .note{
+	padding-left:50px;
+}
+.main-table tr .note .title{
+	color: #CC3300;
+}
+.main-table .ctrl-button{
+	height:30px;
+	text-align:center;
+}
+.error{
+	color:red;
+}

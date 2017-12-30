@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+ 	<constant name="struts.objectFactory"
+		value="org.apache.struts2.spring.StrutsSpringObjectFactory" />
+	<constant name="struts.devMode" value="true"></constant>
+	<constant name="struts.ui.theme" value="simple"></constant>
+	<constant name="struts.i18n.reload" value="true"></constant>
+	<constant name="struts.action.extension" value="do"></constant>
+		
+	<package name="main" extends="struts-default" namespace="/">
+		<action name="login" class="edu.jyu.stumgm.action.LoginAction">
+			<result>/jsp/frame/index.jsp</result>
+		</action>
+		
+		<action name="logout" class="edu.jyu.stumgm.action.LogoutAction">
+			<result>/index.jsp?rand=${rand}</result>
+		</action>
+	</package>
+	
+	<package name="securityControl"  extends="struts-default" namespace="/">
+		
+		<interceptors>
+	        <interceptor name="login" class="edu.jyu.stumgm.interceptor.SecurityInterceptor"/>
+	        <interceptor-stack name="myStack">
+	           <interceptor-ref name="defaultStack"/>
+	           <interceptor-ref name="login"/>
+	        </interceptor-stack>
+	    </interceptors>		
+	    
+	    <default-interceptor-ref name="myStack"></default-interceptor-ref>
+	    
+	    <global-results>
+			<result name="login" type="redirectAction">
+            	<param name="actionName">login</param>
+            	<param name="namespace">/</param>
+        	</result>
+		</global-results>
+	</package>
+	
+	<package name="student" extends="securityControl" namespace="/">
+		<action name="*Student" class="edu.jyu.stumgm.action.StudentAction" method="{1}">
+			<result name="add">/jsp/student/createstudent.jsp</result>
+			<result name="edit">/jsp/student/editstudent.jsp</result>
+			<result name="list" type="redirectAction">
+            	<param name="actionName">studentAdmin</param>
+            	<param name="namespace">/</param>
+        	</result>        	
+		</action>
+		
+		<action name="studentAdmin" class="edu.jyu.stumgm.action.StudentListAction">
+			<result>/jsp/student/studentadmin.jsp</result>
+		</action>
+		
+		<action name="studentList" class="edu.jyu.stumgm.action.StudentListAction">
+			<result>/jsp/student/studentlist.jsp</result>
+		</action>
+		
+		<action name="studentSearch" class="edu.jyu.stumgm.action.StudentSearchAction" method="all">
+			<result>/jsp/student/studentquery.jsp</result>
+		</action>
+		<action name="studentSearchall" class="edu.jyu.stumgm.action.StudentSearchAction" method="all">
+			<result>/jsp/student/studentquery.jsp</result>
+		</action>
+		<action name="studentSearchquery" class="edu.jyu.stumgm.action.StudentSearchAction" method="query">
+			<result>/jsp/student/studentquery.jsp</result>
+		</action>
+		
+	</package>
+	
+	<package name="grade" extends="securityControl" namespace="/">
+		<action name="addGrade" class="edu.jyu.stumgm.action.AddGradeAction">
+			<result name="gradeadmin" type="redirectAction">
+            	<param name="actionName">gradeAdmin</param>
+            	<param name="namespace">/</param>
+        	</result>
+        	<result name="list" type="redirectAction">
+            	<param name="actionName">gradeList</param>
+            	<param name="namespace">/</param>
+        	</result>
+        	<result name="add">/jsp/grade/creategrade.jsp</result>
+		</action>
+		
+		<action name="gradeList" class="edu.jyu.stumgm.action.GradeListAction">
+			<result>/jsp/grade/gradelist.jsp</result>
+		</action>
+		
+		<action name="gradeAdmin" class="edu.jyu.stumgm.action.GradeAdminAction">
+			<result>/jsp/grade/gradeadmin.jsp</result>
+		</action>
+		
+		<action name="deleteGrade" class="edu.jyu.stumgm.action.DeleteGradeAction">
+			<result type="redirectAction">
+            	<param name="actionName">gradeAdmin</param>
+            	<param name="namespace">/</param>
+        	</result>
+		</action>
+		
+		<action name="gradeSearch" class="edu.jyu.stumgm.action.GradeSearchAction">
+			<result>/jsp/grade/gradequery.jsp</result>
+		</action>
+		
+	</package>
+</struts>    
