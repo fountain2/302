@@ -7,7 +7,7 @@
 	<constant name="struts.ui.theme" value="simple"></constant>
 	<constant name="struts.i18n.reload" value="true"></constant>
 	<constant name="struts.action.extension" value="do"></constant>
-		
+	<!-- eqweqwe-->
 	<package name="main" extends="struts-default" namespace="/">
 		<action name="login" class="edu.jyu.stumgm.action.LoginAction">
 			<result>/jsp/frame/index.jsp</result>
