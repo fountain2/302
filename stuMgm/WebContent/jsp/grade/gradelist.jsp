@@ -22,31 +22,10 @@
 					姓名
 				</td>
 				<td>
-					电子技术
+					课程
 				</td>
 				<td>
-					软件工程
-				</td>
-				<td>
-					计算机网络与信息安全
-				</td>
-				<td>
-					Java程序设计
-				</td>
-				<td>
-					高级数据库
-				</td>
-				<td>
-					图形图像处理技术
-				</td>
-				<td>
-					分布计算与互联网技术
-				</td>
-				<td>
-					软件测试与自演化技术
-				</td>
-				<td>
-					总 分
+					分数
 				</td>
 			</tr>
 			<c:forEach items="${gradelist}" var="grade">
@@ -57,32 +36,12 @@
 					<td>
 				 		<c:out value="${grade.student.username}"></c:out>
 					</td>
+				
 					<td class="num">
-						<c:out value="${grade.numElectron}"></c:out>
+						<c:out value="${grade.numCourse}"></c:out>
 					</td>
 					<td class="num">
-						<c:out value="${grade.numSoftware}"></c:out>
-					</td>
-					<td class="num">
-						<c:out value="${grade.numSecurity}"></c:out>
-					</td>
-					<td class="num">
-						<c:out value="${grade.numJava}"></c:out>
-					</td>
-					<td class="num">
-						<c:out value="${grade.numDB}"></c:out>
-					</td>
-					<td class="num">
-						<c:out value="${grade.numImage}"></c:out>
-					</td>
-					<td class="num">
-						<c:out value="${grade.numDistributed}"></c:out>
-					</td>
-					<td class="num">
-						<c:out value="${grade.numTest}"></c:out>
-					</td>
-					<td class="num">
-						<c:out value="${grade.total}"></c:out>
+						<c:out value="${grade.numScore}"></c:out>
 					</td>
 				</tr>
 			</c:forEach>

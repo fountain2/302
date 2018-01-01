@@ -2,6 +2,7 @@ package edu.jyu.stumgm.bo;
 
 import java.util.List;
 
+import edu.jyu.stumgm.dao.GradeDAO;
 import edu.jyu.stumgm.dao.IGradeDAO;
 import edu.jyu.stumgm.dao.IStudentDAO;
 import edu.jyu.stumgm.entity.Grade;
@@ -34,7 +35,7 @@ public class GradeBO {
 	}
 
 	/**
-	 * 根据学生列表删除学生成绩
+	 * 根据选中列表删除课程成绩
 	 * 
 	 * @param studentId
 	 */
@@ -108,6 +109,16 @@ public class GradeBO {
 	 */
 	public boolean isExistSTUIDGrade(String stuNumber) {
 		return gradeDAO.findByStudentNumber(stuNumber) != null;
+	}
+
+	public Grade getCoursebById(String stuid) {
+		// TODO Auto-generated method stub
+		return gradeDAO.getGradeById(stuid);
+	}
+
+	public void insertToGrade(Grade grade) {
+		// TODO Auto-generated method stub
+		gradeDAO.insertTo(grade);
 	}
 
 }

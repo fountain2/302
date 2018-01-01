@@ -16,27 +16,16 @@ public class Grade {
 		
 	}
 	
-	public Grade(Student s, int nel, int nsw, int nst, int nj, int ndb, int nim, int ndt, int nt){
+	public Grade(Student s, String numCourse, int numScore){
 		id = (new Random()).nextLong();
 		student = s;
-		numElectron = nel;
-		numSoftware = nsw;
-		numSecurity = nst;
-		numJava = nj;
-		numDB = ndb;
-		numImage = nim;
-		numDistributed = ndt;
-		numTest = nt;
+		this.numCourse = numCourse;
+		this.numScore = numScore;
 	}
 	private Student student; 
-	private int numElectron;
-	private int numSoftware;
-	private int numSecurity;
-	private int numJava;
-	private int numDB;
-	private int numImage;
-	private int numDistributed;
-	private int numTest;
+	private String numCourse;
+	private int numScore;
+	private String stuNumber;
 	
 	public Student getStudent() {
 		return student;
@@ -44,59 +33,26 @@ public class Grade {
 	public void setStudent(Student student) {
 		this.student = student;
 	}
+	public String getNumCourse() {
+		return numCourse;
+	}
+	public void setNumCourse(String numCourse) {
+		this.numCourse = numCourse;
+	}
+	public int getNumScore() {
+		return numScore;
+	}
+	public void setNumScore(int numScore) {
+		this.numScore = numScore;
+	}
+	public String getStuNumber() {
+		return stuNumber;
+	}
+	public void setStuNumber(String stuNumber) {
+		this.stuNumber = stuNumber;
+	}
+
+
 	
-	public int getNumElectron() {
-		return numElectron;
-	}
-	public void setNumElectron(int numElectron) {
-		this.numElectron = numElectron;
-	}
-	public int getNumSoftware() {
-		return numSoftware;
-	}
-	public void setNumSoftware(int numSoftware) {
-		this.numSoftware = numSoftware;
-	}
-	public int getNumSecurity() {
-		return numSecurity;
-	}
-	public void setNumSecurity(int numSecurity) {
-		this.numSecurity = numSecurity;
-	}
-	public int getNumJava() {
-		return numJava;
-	}
-	public void setNumJava(int numJava) {
-		this.numJava = numJava;
-	}
-	public int getNumDB() {
-		return numDB;
-	}
-	public void setNumDB(int numDB) {
-		this.numDB = numDB;
-	}
-	public int getNumImage() {
-		return numImage;
-	}
-	public void setNumImage(int numImage) {
-		this.numImage = numImage;
-	}
-	public int getNumDistributed() {
-		return numDistributed;
-	}
-	public void setNumDistributed(int numDistributed) {
-		this.numDistributed = numDistributed;
-	}
-	public int getNumTest() {
-		return numTest;
-	}
-	public void setNumTest(int numTest) {
-		this.numTest = numTest;
-	}
-	
-	public int getTotal(){
-		return numElectron+numSoftware+numSecurity+numJava+numImage
-+numDB+numDistributed+numTest;
-	}
 	
 }

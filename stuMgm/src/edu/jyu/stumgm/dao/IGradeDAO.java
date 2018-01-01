@@ -12,6 +12,11 @@ public interface IGradeDAO {
 
 	public Grade get(Serializable id) ;
 	
+	/**
+	 * new
+	 * update 选中的列的信息
+	 * @param obj
+	 */
 	public void update(Grade obj) ;
 
 	public void delete(Grade obj);
@@ -62,4 +67,19 @@ public interface IGradeDAO {
 	public List<Grade> findGradebyStudentNumberOrName(String key);
 	
 	public void deleteAll();
+	
+	/**
+	 * new
+	 * 根据grade_id 查找成绩列表
+	 * @param stuid
+	 * @return
+	 */
+	public Grade getGradeById(String stuid);
+	
+	/**
+	 * new
+	 * 将新建的课程插入表中
+	 * @param grade
+	 */
+	public void insertTo(Grade grade);
 }

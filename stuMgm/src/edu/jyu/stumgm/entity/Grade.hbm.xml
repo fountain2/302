@@ -7,6 +7,11 @@
 		<id name="id" column="grade_id">
 			<generator class="native" />
 		</id>
+		
+		<property name="numCourse" length="20" type="string" column="course"></property>
+		<property name="numScore" type="int" column="score"></property>
+		
+<!--	
 		<property name="numElectron" type="int" column="electron"></property>
 		<property name="numSoftware" type="int" column="software"></property>
 		<property name="numSecurity" type="int" column="security"></property>
@@ -16,8 +21,9 @@
 		<property name="numImage" type="int" column="img"></property>
 		<property name="numDistributed" type="int" column="distributed"></property>
 		<property name="numTest" type="int" column="test"></property>
+	  -->
 		
+		<!-- <many-to-one name="student" class="Student" column="student_id" unique="true"></many-to-one> -->
 		<many-to-one name="student" class="Student" column="student_id" unique="true"></many-to-one>
-
 	</class>
 </hibernate-mapping>

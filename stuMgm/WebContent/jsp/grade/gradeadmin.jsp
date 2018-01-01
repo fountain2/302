@@ -28,39 +28,18 @@
 							姓名
 						</td>
 						<td>
-							电子技术
+							课程
 						</td>
 						<td>
-							软件工程
-						</td>
-						<td>
-							计算机网络与信息安全
-						</td>
-						<td>
-							Java程序设计
-						</td>
-						<td>
-							高级数据库
-						</td>
-						<td>
-							图形图像处理技术
-						</td>
-						<td>
-							分布计算与互联网技术
-						</td>
-						<td>
-							软件测试与自演化技术
-						</td>
-						<td>
-							总 分
+							分数
 						</td>
 					</tr>
 					<c:forEach items="${gradelist}" var="grade">
 						<c:set var="student" value="${grade.student}"></c:set>
 						<tr>
 							<td>
-								<input type=checkbox id="${student.stuNumber}"
-									value="${student.stuNumber}">
+								<input type=checkbox id="${grade.id}"
+									value="${grade.id}">
 							</td>
 							<td>
 								${student.stuNumber}
@@ -69,31 +48,10 @@
 								<c:out value="${student.username}"></c:out>
 							</td>
 							<td class="num">
-								<c:out value="${grade.numElectron}" default="0" />
+								<c:out value="${grade.numCourse}"></c:out>
 							</td>
 							<td class="num">
-								<c:out value="${grade.numSoftware}" default="0"></c:out>
-							</td>
-							<td class="num">
-								<c:out value="${grade.numSecurity}" default="0"></c:out>
-							</td>
-							<td class="num">
-								<c:out value="${grade.numJava}" default="0"></c:out>
-							</td>
-							<td class="num">
-								<c:out value="${grade.numDB}" default="0"></c:out>
-							</td>
-							<td class="num">
-								<c:out value="${grade.numImage}" default="0"></c:out>
-							</td>
-							<td class="num">
-								<c:out value="${grade.numDistributed}" default="0"></c:out>
-							</td>
-							<td class="num">
-								<c:out value="${grade.numTest}" default="0"></c:out>
-							</td>
-							<td class="num">
-								<c:out value="${grade.total}" default="0"></c:out>
+								<c:out value="${grade.numScore}"></c:out>
 							</td>
 						</tr>
 					</c:forEach>

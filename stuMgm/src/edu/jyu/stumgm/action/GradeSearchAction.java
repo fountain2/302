@@ -15,7 +15,7 @@ public class GradeSearchAction extends ActionSupport {
 	
 	private List<Grade> gradelist;
 	private GradeBO gradeBO;
-	private String querystring, querystring1, querystring2;
+	private String querystring, querystring1, querystring2, querystring3;
 	private String queryoption;
 	
 	
@@ -23,7 +23,7 @@ public class GradeSearchAction extends ActionSupport {
 	public String execute()
 	{
 		List<Grade> glist = gradeBO.getAllGrade();
-		if(querystring==null&&querystring1==null&&querystring2==null) 
+		if(querystring==null&&querystring1==null&&querystring2==null&&querystring3==null) 
 			{
 				gradelist=glist;
 				return SUCCESS;
@@ -43,13 +43,14 @@ public class GradeSearchAction extends ActionSupport {
 		}
 		else if(queryoption.equals("1")) /** 查询成绩小于 */
 		{
-			for(int i=0; i<glist.size(); i++)
+			for(int i=0; i<glist.size();)
 			{
 				Grade g=glist.get(i);
-				if(g.getTotal()>=Integer.parseInt(querystring1))
+				if(g.getNumScore() >= Integer.parseInt(querystring1))
 				{
-					glist.remove(i);
-				}
+					glist.remove(g);
+				}else
+					 i++;
 			}
 			
 		}
@@ -61,7 +62,7 @@ public class GradeSearchAction extends ActionSupport {
 				int max = i;
 				for(int j=i+1; j<lg.size(); j++)
 				{
-					if(lg.get(j).getTotal()>lg.get(max).getTotal())
+					if(lg.get(j).getNumScore()>lg.get(max).getNumScore())
 					{
 						max=j;
 					}
@@ -77,13 +78,26 @@ public class GradeSearchAction extends ActionSupport {
 			int i=1;
 			for(int j=1; i<lg.size(); i++)
 			{
-				if(i>=1&&lg.get(i).getTotal()!=lg.get(i-1).getTotal()) 
+				if(i>=1&&lg.get(i).getNumScore()!=lg.get(i-1).getNumScore()) 
 					{
 						j++;
 						if(j>k) break;
 					}
 			}
 			glist=lg.subList(0, i);
+		}
+		else if(queryoption.equals("3")) /** 查询课程学生的分数 */
+		{
+			String qstring3= querystring3.trim();
+			for(int i=0; i<glist.size(); )
+			{
+				Grade g=glist.get(i);
+				if(!g.getNumCourse().equals(qstring3))
+				{
+					glist.remove(g);
+				}
+				else i++;
+			}
 		}
 		
 		gradelist=glist;
@@ -150,6 +164,15 @@ public class GradeSearchAction extends ActionSupport {
 		this.querystring2 = querystring2;
 	}
 
+	public String getQuerystring3() {
+		return querystring3;
+	}
+
+
+
+	public void setQuerystring3(String querystring3) {
+		this.querystring3 = querystring3;
+	}
 
 
 	public String getQueryoption() {

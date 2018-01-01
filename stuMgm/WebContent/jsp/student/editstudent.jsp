@@ -19,7 +19,7 @@
 			<span class="title">修改学生信息</span>
 		</div>
 		<div class="main-body">
-			<form name="studentForm" method="POST" action="editStudent.do"">
+			<form name="studentForm" method="POST" action="editStudent.do">
 				<input type="hidden" name="flag" value="update" />
 				<table class="main-table" cellpadding="0" cellspacing="0" align="center">
 					<tr >

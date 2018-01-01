@@ -23,6 +23,10 @@ public class AddGradeAction extends ActionSupport {
 	
 	private String flag;
 	private String stuid;
+	private String grade_id;
+	private String stuNumber;
+	private String grade_numScore;
+	private String grade_numCourse;
 	private Grade grade;
 	private Student student;
 	private List<Grade> gradelist;
@@ -44,15 +48,33 @@ public class AddGradeAction extends ActionSupport {
 		}
 		if("update".equals(flag))
 		{
-			student=studentBO.getStudentByNumber(stuid);
-			grade.setStudent(student);
+			//根据id获取grade，并进行更新
+			int grade_numScore1 = Integer.parseInt(grade_numScore);
+			grade = gradeBO.getCoursebById(grade_id);
+			grade.setNumCourse(grade_numCourse);
+			grade.setNumScore(grade_numScore1);
+//			System.out.println(grade.getNumCourse()+":"+grade.getNumScore());
 			gradeBO.updateGrade(grade);
-			return "add";
+			return SUCCESS;
 		}
-		
-		student = studentBO.getStudentByNumber(stuid);
+		if("new".equals(flag)){
+			student = studentBO.getStudentByNumber(stuid);
+			HttpServletRequest request = ServletActionContext.getRequest();
+			request.setAttribute("student", student);
+			return "newto";
+		}
+		if("finish".equals(flag)){
+			student = studentBO.getStudentByNumber(stuNumber);
+			int grade_numScore1 = Integer.parseInt(grade_numScore);
+			grade = new Grade(student,grade_numCourse,grade_numScore1);
+			grade.setStuNumber(stuNumber);
+			gradeBO.insertToGrade(grade);
+			return SUCCESS;
+		}
+//		student = studentBO.getStudentByNumber(stuid);
+		grade = gradeBO.getCoursebById(stuid);
 		HttpServletRequest request = ServletActionContext.getRequest();
-		request.setAttribute("student", student);
+		request.setAttribute("grade", grade);
 		return "add";
 	}
 
@@ -102,6 +124,38 @@ public class AddGradeAction extends ActionSupport {
 
 	public void setStudentBO(StudentBO studentBO) {
 		this.studentBO = studentBO;
+	}
+
+	public String getGrade_id() {
+		return grade_id;
+	}
+
+	public void setGrade_id(String grade_id) {
+		this.grade_id = grade_id;
+	}
+
+	public String getGrade_numScore() {
+		return grade_numScore;
+	}
+
+	public void setGrade_numScore(String grade_numScore) {
+		this.grade_numScore = grade_numScore;
+	}
+
+	public String getGrade_numCourse() {
+		return grade_numCourse;
+	}
+
+	public void setGrade_numCourse(String grade_numCourse) {
+		this.grade_numCourse = grade_numCourse;
+	}
+
+	public String getStuNumber() {
+		return stuNumber;
+	}
+
+	public void setStuNumber(String stuNumber) {
+		this.stuNumber = stuNumber;
 	}
 	
 

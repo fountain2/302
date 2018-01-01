@@ -17,6 +17,7 @@
 		<property name="postID" length="20" type="string" column="post_code"></property>
 		<property name="address" length="20" type="string"></property>
 		
-		<one-to-one name="grade" property-ref="student" class="Grade" cascade="all" fetch="join" ></one-to-one>
+		<!-- <one-to-one name="grade" property-ref="student" class="Grade" cascade="all" fetch="join" ></one-to-one> -->
+		<many-to-one name="grade" property-ref="student" class="Grade" cascade="all" fetch="join" ></many-to-one>
 	</class>
 </hibernate-mapping>

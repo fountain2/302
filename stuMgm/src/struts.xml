@@ -70,6 +70,11 @@
 	
 	<package name="grade" extends="securityControl" namespace="/">
 		<action name="addGrade" class="edu.jyu.stumgm.action.AddGradeAction">
+			<result name="newto">/jsp/grade/newgrade.jsp</result>
+			<result name="success" type="redirectAction">
+				<param name="actionName">gradeList</param>
+            	<param name="namespace">/</param>
+			</result>
 			<result name="gradeadmin" type="redirectAction">
             	<param name="actionName">gradeAdmin</param>
             	<param name="namespace">/</param>

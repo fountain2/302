@@ -77,12 +77,11 @@
 								onclick="deletestudent(studentForm);" />
 							<input type=button name="edit" value="修改学生信息"
 								onclick="editstudent(studentForm);" />
-							<input type=button name="addgrade" value="维护学生成绩"
-								onclick="modifygrade(studentForm);" />
+							<input type=button name="addgrade" value="新增学生课程成绩"
+								onclick="establish_grade(studentForm);" />
 						</td>
 					</tr>
 				</table>
-				<input type=hidden name="studentids" value="">
 			</form>
 			</div>
 			<t:foot />

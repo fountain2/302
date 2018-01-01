@@ -41,6 +41,15 @@
 							<input type="text" name="querystring2" value="${querystring2}"
 								onfocus="selectoption(gradeForm,2)">
 							名的学生成绩
+							<br>
+							
+							<input type="radio" size="2" name="queryradio" value="3"
+								<c:if test="${queryoption eq '3'}">checked</c:if>>
+							查询课程为
+							<input type="text" name="querystring3" value="${querystring3}"
+								onfocus="selectoption(gradeForm,3)">
+							的学生成绩
+							
 							<input type=button name="querybtn" value="查 询"
 								onclick="javascript: query(gradeForm)">
 						</td>
@@ -55,31 +64,10 @@
 							姓名
 						</td>
 						<td>
-							电子技术
+							课程
 						</td>
 						<td>
-							软件工程
-						</td>
-						<td>
-							计算机网络与信息安全
-						</td>
-						<td>
-							Java程序设计
-						</td>
-						<td>
-							高级数据库
-						</td>
-						<td>
-							图形图像处理技术
-						</td>
-						<td>
-							分布计算与互联网技术
-						</td>
-						<td>
-							软件测试与自演化技术
-						</td>
-						<td>
-							总 分
+							分数
 						</td>
 					</tr>
 					<c:forEach items="${gradelist}" var="grade">
@@ -91,31 +79,10 @@
 								<c:out value="${grade.student.username}"></c:out>
 							</td>
 							<td class="num">
-								<c:out value="${grade.numElectron}" default="0"></c:out>
+								<c:out value="${grade.numCourse}"></c:out>
 							</td>
 							<td class="num">
-								<c:out value="${grade.numSoftware}" default="0"></c:out>
-							</td>
-							<td class="num">
-								<c:out value="${grade.numSecurity}"></c:out>
-							</td>
-							<td class="num">
-								<c:out value="${grade.numJava}"></c:out>
-							</td>
-							<td class="num">
-								<c:out value="${grade.numDB}"></c:out>
-							</td>
-							<td class="num">
-								<c:out value="${grade.numImage}"></c:out>
-							</td>
-							<td class="num">
-								<c:out value="${grade.numDistributed}"></c:out>
-							</td>
-							<td class="num">
-								<c:out value="${grade.numTest}"></c:out>
-							</td>
-							<td class="num">
-								<c:out value="${grade.total}"></c:out>
+								<c:out value="${grade.numScore}"></c:out>
 							</td>
 						</tr>
 					</c:forEach>

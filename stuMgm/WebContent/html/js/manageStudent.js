@@ -81,6 +81,34 @@ function editstudent(form) {
 	location.href = "editStudent.do?stuid=" + studid;
 }
 
+
+function establish_grade(form) {
+	var cbxoption, studid, username;
+	cbxoption = form.elements;
+	var m = 0;
+	for (i = 0; i < cbxoption.length; i++) {
+		if ((cbxoption[i].tagName.toLowerCase() == "input")
+				&& (cbxoption[i].type)
+				&& (cbxoption[i].type.toLowerCase() == "checkbox")) {
+			if (cbxoption[i].checked) {
+				m++;
+				if (m > 1) {
+					alert("一次只能新增一个学生的成绩，请重选！");
+					return;
+				}
+				studid = cbxoption[i].value;
+			}
+		}
+	}
+
+	if (m == 0) {
+		alert("你没有选中需要维护成绩的学生，请重选！");
+		return;
+	}
+	//传送参数
+	location.href = "addGrade.do?stuid=" + studid+"&flag=new";
+}
+
 function modifygrade(form) {
 	var cbxoption, studid, username;
 	cbxoption = form.elements;
@@ -104,5 +132,6 @@ function modifygrade(form) {
 		alert("你没有选中需要维护成绩的学生，请重选！");
 		return;
 	}
+	//传送参数
 	location.href = "addGrade.do?stuid=" + studid+"&flag=add";
 }

@@ -10,17 +10,15 @@
 	<body>
 		<t:menu />
 		<div class="main-top">
-			<span class="title">维护学生成绩</span>
+			<span class="title">新增学生课程成绩</span>
 		</div>
 
 		<div class="main-body">
+			
 			<form name="form" method="get" action="addGrade.do"
 				onsubmit="return checkForm();">
-				<!-- <input type="hidden" name="student" value="${grade.student }">
-				<input type="hidden" name="stuid" value="${grade.student.stuNumber }"> -->
-				<input type="hidden" name="grade_id" value="${grade.id}">
-				<input type="hidden" name="flag" value="update">
-
+				<input type="hidden" name="flag" value="finish" />
+				<input type="hidden" name="stuNumber" value="${student.stuNumber }" />
 				<table class="main-table" align="center" cellpadding="0"
 					cellspacing="0">
 					<tr>
@@ -28,8 +26,8 @@
 							学 号：
 						</td>
 						<td>
-							<input type="text" name="studentID" maxlength="20" size="30"
-								value="${grade.student.stuNumber }" class="bbsInput_short" disabled>
+							<input type="text" name="stuNumber" maxlength="20" size="30"
+								value="${student.stuNumber }" class="bbsInput_short" disabled>
 						</td>
 					</tr>
 					<tr>
@@ -37,8 +35,8 @@
 							学生姓名：
 						</td>
 						<td>
-							<input type="text" name="name" maxlength="20" size="30"
-								value="<c:out value="${grade.student.username}"></c:out>"
+							<input type="text" name="username" maxlength="20" size="30"
+								value="<c:out value="${student.username}"></c:out>"
 								class="bbsInput_short" disabled>
 						</td>
 					</tr>
@@ -46,11 +44,11 @@
 					
 					<tr>
 						<td class="first">
-							修改的科目：
+							新增科目：
 						</td>
 						<td>
 							<input type="text" name="grade_numCourse" maxlength="20" size="30"
-								value="${grade.numCourse}" class="bbsInput_short">
+								value="" class="bbsInput_short">
 						</td>
 					</tr>
 					<tr>
@@ -59,13 +57,13 @@
 						</td>
 						<td>
 							<input type="text" name="grade_numScore" maxlength="20" size="30"
-								value="${grade.numScore}" class="bbsInput_short">
+								value="" class="bbsInput_short">
 						</td>
 					</tr>
 					<tr>
 						<td height="22" colspan="4">
 							<div align="center">
-								<input type="submit" value="保 存" class="bbsbutton">
+								<input type="submit" value="创建" class="bbsbutton">
 								
 								&nbsp;&nbsp;
 								<input type="reset" value="返 回" onclick="history.back(-1);"
@@ -79,7 +77,7 @@
 						<td colspan="2" class="note">
 							<span class="title">注 意 事 项 ：</span>
 							<br />
-							请仔细核对学生的成绩，确认所输入的信息是正确的，如果本次输入错了，保存成功后，还可以继续修改。
+							
 						</td>
 					</tr>
 
