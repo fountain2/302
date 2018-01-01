@@ -179,7 +179,7 @@ MatchMode.ANYWHERE)));
 
 	@Override
 	public void insertTo(Grade grade) {
-//      String sql = "insert into grade (student_id,course,score) values("+stuNumber+","+numCourse+","+numScore+")"; 
+//      insert into grade (student_id,course,score) values("+stuNumber+","+numCourse+","+numScore+"); 
         Session session =sessionFactory.openSession(); 
 		session.beginTransaction();
 		//insert

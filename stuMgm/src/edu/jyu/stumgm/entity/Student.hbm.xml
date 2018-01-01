@@ -10,7 +10,7 @@
 		<property name="username"  length="20" column="name" type="string"></property>
 		<property name="gender" length="4" type="string"></property>
 		<property name="city" length="20" type="string"></property>
-		<property name="identityID" length="20" type="string" column="id_number"></property>
+		<property name="identityID" length="120" type="string" column="id_number"></property>
 		<property name="phone" length="20" type="string"></property>
 
 		<property name="email" length="20" type="string"></property>

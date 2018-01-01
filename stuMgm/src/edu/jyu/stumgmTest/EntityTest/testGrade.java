@@ -123,8 +123,8 @@ public class testGrade {
 
 	@Test
 	public void testGetTotal() {
-		Grade g = new Grade(new Student(), 0, 0, 0, 0, 0, 0, 0, 0);
-		int total = g.getTotal();
+		Grade g = new Grade(new Student(), "软件项目管理", 70);
+		int total = g.getNumScore();
 		assertEquals(total, 0);
 		fail("Not yet implemented");
 	}

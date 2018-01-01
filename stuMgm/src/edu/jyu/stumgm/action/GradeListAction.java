@@ -48,8 +48,6 @@ public class GradeListAction extends ActionSupport {
 		List<Grade> gradelist = gradeBO.getAllGrade();
 		HttpServletRequest request=ServletActionContext.getRequest();
 		request.setAttribute("gradelist", gradelist);
-		
-//		System.out.println("gradelist.size()="+gradelist.size());
 		return SUCCESS;
 	}
 }

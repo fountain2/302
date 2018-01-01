@@ -61,9 +61,4 @@ public class StudentSearchAction extends ActionSupport {
 	public void setQuerystring(String querystring) {
 		this.querystring = querystring;
 	}
-//	public String execute()
-//	{
-//		studentlist = studentBO.getAllStudents();
-//		return SUCCESS;
-//	}
 }

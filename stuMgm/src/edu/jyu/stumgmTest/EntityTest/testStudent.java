@@ -14,10 +14,10 @@ public class testStudent extends TestCase {
     public void testgetGrade()
     {
     	Student s = new Student();
-    	Grade g = new Grade(s, 0, 0, 0, 0, 0, 0, 0, 0);
+    	Grade g = new Grade(new Student(), "软件项目管理", 70);
     	s.setGrade(g);
     	assertEquals(s.getGrade().getId(), g.getId());
-    	assertEquals(s.getGrade().getNumDB(), g.getNumDB());
+    	assertEquals(s.getGrade().getNumScore(), g.getNumScore());
     }
     
     public void testgetIdentityId()

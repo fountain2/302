@@ -46,6 +46,7 @@ public class AddGradeAction extends ActionSupport {
 			List<Grade> gradelist = gradeBO.getAllGrade();
 			return "list";
 		}
+		//修改学生成绩信息完毕
 		if("update".equals(flag))
 		{
 			//根据id获取grade，并进行更新
@@ -57,12 +58,14 @@ public class AddGradeAction extends ActionSupport {
 			gradeBO.updateGrade(grade);
 			return SUCCESS;
 		}
+		//新建学生课程成绩
 		if("new".equals(flag)){
 			student = studentBO.getStudentByNumber(stuid);
 			HttpServletRequest request = ServletActionContext.getRequest();
 			request.setAttribute("student", student);
 			return "newto";
 		}
+		//新建学生课程成绩完毕
 		if("finish".equals(flag)){
 			student = studentBO.getStudentByNumber(stuNumber);
 			int grade_numScore1 = Integer.parseInt(grade_numScore);

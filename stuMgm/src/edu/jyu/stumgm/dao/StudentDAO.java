@@ -21,16 +21,11 @@ public class StudentDAO extends BaseDAO<Student> implements IStudentDAO{
 	}
 	
 	public void save(Student s){
-		
-//		super.setSessionFactory(sessionFactory);
-//		super.save(s);	
-		
 		Session session = sessionFactory.openSession();
 		session.beginTransaction();
 		session.save(s);
 		session.getTransaction().commit();
 		session.close();
-//		template.save(s);
 	}
 
 	public void delete(String stuNumber) {

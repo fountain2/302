@@ -52,8 +52,8 @@ public class Student {
 		this.city = city;
 	}
 	public String getIdentityID() {
-		//return identityID;
-		return "sssss";
+		return identityID;
+//		return "sssss";
 	}
 	public void setIdentityID(String identityID) {
 		this.identityID = identityID;
