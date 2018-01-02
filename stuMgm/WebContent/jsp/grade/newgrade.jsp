@@ -44,7 +44,7 @@
 					
 					<tr>
 						<td class="first">
-							新增课程：
+							<span class="tip">*</span>新增课程：
 						</td>
 						<td>
 							<input type="text" name="grade_numCourse" maxlength="20" size="30"
@@ -53,7 +53,7 @@
 					</tr>
 					<tr>
 						<td class="first">
-							课程分数：
+							<span class="tip">*</span>课程分数：
 						</td>
 						<td>
 							<input type="text" name="grade_numScore" maxlength="20" size="30"

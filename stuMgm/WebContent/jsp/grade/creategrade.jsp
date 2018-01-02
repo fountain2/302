@@ -46,7 +46,7 @@
 					
 					<tr>
 						<td class="first">
-							修改的课程：
+							<span class="tip">*</span>修改的课程：
 						</td>
 						<td>
 							<input type="text" name="grade_numCourse" maxlength="20" size="30"
@@ -55,7 +55,7 @@
 					</tr>
 					<tr>
 						<td class="first">
-							分数：
+							<span class="tip">*</span>分数：
 						</td>
 						<td>
 							<input type="text" name="grade_numScore" maxlength="20" size="30"

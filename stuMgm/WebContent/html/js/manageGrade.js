@@ -122,44 +122,19 @@ function modifygrade(form)
 
 function checkForm()
 {
-	if ((AtTrim(document.form["grade.numElectron"].value) != "") && !isValidNumber(document.form["grade.numElectron"].value)) {
-		alert("学生的成绩应为数字，请重新输入!");
-		document.form["grade.numElectron"].focus();
+	if (AtTrim(document.form["grade_numCourse"].value) == "") {
+		alert("课程名不能为空，请重新输入!");
+		document.form["grade_numCourse"].focus();
 		return false;
 	}
-	if ((AtTrim(document.form["grade.numSoftware"].value) != "") && !isValidNumber(document.form["grade.numSoftware"].value)) {
+	if ((AtTrim(document.form["grade_numScore"].value) != "") && !isValidNumber(document.form["grade_numScore"].value)) {
 		alert("学生的成绩应为数字，请重新输入!");
-		document.form["grade.numSoftware"].focus();
+		document.form["grade_numScore"].focus();
 		return false;
 	}
-		if ((AtTrim(document.form["grade.numSecurity"].value) != "") && !isValidNumber(document.form["grade.numSecurity"].value)) {
-		alert("学生的成绩应为数字，请重新输入!");
-		document.form["grade.numSecurity"].focus();
-		return false;
-	}
-		if ((AtTrim(document.form["grade.numJava"].value) != "") && !isValidNumber(document.form["grade.numJava"].value)) {
-		alert("学生的成绩应为数字，请重新输入!");
-		document.form["grade.numJava"].focus();
-		return false;
-	}
-		if ((AtTrim(document.form["grade.numDB"].value) != "") && !isValidNumber(document.form["grade.numDB"].value)) {
-		alert("学生的成绩应为数字，请重新输入!");
-		document.form["grade.numDB"].focus();
-		return false;
-	}
-		if ((AtTrim(document.form["grade.numImage"].value) != "") && !isValidNumber(document.form["grade.numImage"].value)) {
-		alert("学生的成绩应为数字，请重新输入!");
-		document.form["grade.numImage"].focus();
-		return false;
-	}
-		if ((AtTrim(document.form["grade.numDistributed"].value) != "") && !isValidNumber(document.form["grade.numDistributed"].value)) {
-		alert("学生的成绩应为数字，请重新输入!");
-		document.form["grade.numDistributed"].focus();
-		return false;
-	}
-	if ((AtTrim(document.form["grade.numTest"].value) != "") && !isValidNumber(document.form["grade.numTest"].value)) {
-		alert("学生的成绩应为数字，请重新输入!");
-		document.form["grade.numTest"].focus();
+	if (AtTrim(document.form["grade_numScore"].value) == "") {
+		alert("学生的成绩不能为空，请重新输入!");
+		document.form["grade_numScore"].focus();
 		return false;
 	}
 	return true;
