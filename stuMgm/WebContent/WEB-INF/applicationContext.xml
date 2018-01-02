@@ -15,7 +15,7 @@
 		</property>
 		<property name="url" value="jdbc:mysql://localhost:3306/myapp?characterEncoding=gbk&amp;useUnicode=true"></property>
 		<property name="username" value="root"></property>
-		<property name="password" value="root"></property>
+		<property name="password" value="1234"></property>
 
 	</bean>
 	<bean id="sessionFactory"
