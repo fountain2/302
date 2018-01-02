@@ -69,6 +69,8 @@
 					</c:if>
 					<tr>
 						<td colspan=9 class="ctrl-button">
+							<input type=button name="adds" value="新增学生"
+								onclick="add_student();" />
 							<input type=button name="allcheck" value="全选"
 								onclick="checkall(studentForm);" />
 							<input type=button name="allnotcheck" value="全不选"

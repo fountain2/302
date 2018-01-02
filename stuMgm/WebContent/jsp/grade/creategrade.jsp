@@ -14,7 +14,7 @@
 		</div>
 
 		<div class="main-body">
-			<form name="form" method="get" action="addGrade.do"
+			<form name="form" method="POST" action="addGrade.do"
 				onsubmit="return checkForm();">
 				<!-- <input type="hidden" name="student" value="${grade.student }">
 				<input type="hidden" name="stuid" value="${grade.student.stuNumber }"> -->
@@ -46,7 +46,7 @@
 					
 					<tr>
 						<td class="first">
-							修改的科目：
+							修改的课程：
 						</td>
 						<td>
 							<input type="text" name="grade_numCourse" maxlength="20" size="30"

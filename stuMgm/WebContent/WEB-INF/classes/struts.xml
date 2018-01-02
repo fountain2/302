@@ -87,7 +87,7 @@
 		</action>
 		
 		<action name="gradeList" class="edu.jyu.stumgm.action.GradeListAction">
-			<result>/jsp/grade/gradelist.jsp</result>
+			<result>/jsp/grade/gradeadmin.jsp</result>
 		</action>
 		
 		<action name="gradeAdmin" class="edu.jyu.stumgm.action.GradeAdminAction">

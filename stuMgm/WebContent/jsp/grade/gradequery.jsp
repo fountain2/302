@@ -37,7 +37,7 @@
 							<br>
 							<input type="radio" size="2" name="queryradio" value="2"
 								<c:if test="${queryoption eq '2'}">checked</c:if>>
-							查询总成绩前
+							查询单科成绩前
 							<input type="text" name="querystring2" value="${querystring2}"
 								onfocus="selectoption(gradeForm,2)">
 							名的学生成绩

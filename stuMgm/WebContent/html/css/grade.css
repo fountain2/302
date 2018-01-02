@@ -1,7 +1,7 @@
 .main-top {
-	width: 776px;
+	width: 1000px;
 	margin: 0 auto;
-	padding-top: 10px;
+	padding-top: 20px;
 	height: 30px;
 	text-align: center;
 	background-color: #efefef;
@@ -12,7 +12,7 @@
 
 .main-top .title {
 	font-weight: bold;
-	font-size: 14px;
+	font-size: 18px;
 }
 
 .main-top .tip {
@@ -20,9 +20,9 @@
 }
 
 .main-body {
-	width: 776px;
+	width: 1000px;
 	margin: 0 auto;
-	padding-top: 10px;
+	padding-top: 20px;
 	height: 480px;
 	text-align: center;
 	background-color: #efefef;
@@ -35,7 +35,7 @@
 }
 		
 .main-table {
-	width: 98%;
+	width: 80%;
 	border: 0px;
 	text-align: center;
 	background-color:white;

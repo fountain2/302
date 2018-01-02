@@ -32,11 +32,11 @@
 
 		<div class="content">
 			<FORM name=form1 action="login.do" method="POST">
-				<table width="778" border="0" cellSpacing="3" cellPadding="0"
-					bgColor="#E0FCDE">
+				<table width="1000" border="0" cellSpacing="3" cellPadding="0"
+					bgColor="#ffffff" >
 					<c:if test="${empty user}">
 						<!-- login页面-->
-						<tr height="10">
+						<tr height="20">
 							<td colspan="3">&nbsp;
 								
 							</td>
@@ -53,21 +53,19 @@
 							</tr>
 						</c:if>
 						<tr>
-							<td width="30%">&nbsp;
-								
+							<td width="35%">&nbsp;	
 							</td>
-							<td colSpan="2">
-								<b><u>请输入用户名与密码</u> </b>
+							<td>
+							<IMG alt=dlks src="html/pic/dl1.png" width=300 border=0>
 							</td>
-
 						</tr>
 
 						<tr>
-							<td width="30%">&nbsp;
-								
+							<td width="30%">
+							&nbsp;
 							</td>
 							<td colspan="2">
-								用户名：
+								&nbsp;&nbsp;&nbsp;&nbsp;账&nbsp;号：
 								<INPUT class=input_login id=userName maxLength=20 size=20
 									name=userName>
 							</td>
@@ -78,21 +76,27 @@
 								
 							</td>
 							<td colspan="2">
-								密&nbsp;&nbsp;码：
+								&nbsp;&nbsp;&nbsp;&nbsp;密&nbsp;码：
 								<INPUT class=input_login type=password maxLength=20 size=20
 									name=password>
 							</td>
 						</tr>
 						<tr>
-							<td>&nbsp;
-								
+						  <td>&nbsp;		
 						  </td>
-							<td>
-								<a style="CURSOR: hand" href="javascript:checkName()"> <IMG
-										alt=现在登录 src="html/pic/reg2.gif" width=75 border=0>								</a>							</td>
-						</tr>
 
-						<tr height="10">
+							<td colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+								<a style="CURSOR: hand" href="javascript:checkName()"> <IMG
+										alt=现在登录 src="html/pic/reg2.png" width=100 border=0>								</a>							</td>
+						</tr>
+                        <tr>
+							<td width="35%">&nbsp;	
+							</td>
+							<td>
+							<IMG alt=dlks src="html/pic/dl2.png" width=300 border=0>
+							</td>
+						</tr>
+						<tr height="30">
 							<td>&nbsp;
 								
 							</td>
@@ -110,11 +114,11 @@
 						</tr>
 						<tr>
 							<td colspan="2" height="85">
-								<IMG src="html/pic/welcome.gif">
+								<IMG src="html/pic/welcome.png">
 							</td>
 						</tr>
 						<tr>
-							<td colspan="2" height="20" color="white">
+							<td colspan="2" height="1" color="white">
 
 							</td>
 						</tr>
@@ -123,17 +127,10 @@
 				</table>
 			</FORM>
 
-			<table cellSpacing="0" cellPadding="6" width="778" border="1">
+			<table cellSpacing="0" cellPadding="6" width="1000" border="1">
 				<tr>
 					<td align="left" bgColor="#f2f2f2">
-						注意事顼：
-					</td>
-				</tr>
-				<tr>
-					<td style="LINE-HEIGHT: 25px" align="left">
-						注意：建议使用IE及Firefox等高版本的浏览器,推荐使用IE8及Firefox 3.5等,其它的浏览器可能不能正常使用本系统；
-						<BR>
-						
+						注意事顼：建议使用IE及Firefox等高版本的浏览器,推荐使用IE8及Firefox 3.5等,其它的浏览器可能不能正常使用本系统；
 					</td>
 				</tr>
 			</table>

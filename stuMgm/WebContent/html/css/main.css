@@ -5,23 +5,17 @@
 }
 body{
 	text-align:center;	
+	background-image:url(../pic/bg.png);
 }
 .top{
-	width: 778px;
+	width: 1000px;
 	margin:0 auto;
-	height:131px;
+	height:153px;
 }
 .top .logo{
-	width: 778px;
-	height:85px;	
-	background-image:url(../pic/header.jpg);
-}
-.top .welcome{
-	width:100%;
-	height:20px;
-	text-align:right;	
-	line-height:20px;
-	background-color: #efefef;
+	width: 1000px;
+	height:127px;	
+	background-image:url(../pic/ss.png);
 }
 .top .menu{
 	width:100%;
@@ -33,13 +27,13 @@ body{
 	color:#333333;
 }
 .content{
-	width: 778px;
+	width: 1000px;
 	text-align:center;
 	margin:1px auto;
 }
 .foot{
-	width: 778px;
+	width: 1000px;
 	text-align:center;
-	height:116px;
+	height:114px;
 	margin:1px auto;
 }

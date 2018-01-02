@@ -67,6 +67,7 @@ public class StudentDAO extends BaseDAO<Student> implements IStudentDAO{
 //		});
 		
 		Session session = sessionFactory.openSession();
+		session.createQuery("delete from Grade g where g.student.stuNumber in (:n)").setParameterList("n",numbers).executeUpdate();
 		session.createQuery("delete from Student g where g.stuNumber in (:n)").setParameterList("n", numbers).executeUpdate();
 	}
 	

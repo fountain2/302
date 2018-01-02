@@ -15,7 +15,7 @@
 
 		<div class="main-body">
 			<form name="gradeForm" method="POST">
-				<table class="main-table" cellspacing="0" width="100%" border="1"
+				<table class="main-table" cellspacing="0" width="70%" border="1"
 					align="center">
 					<tr class="title">
 						<td>

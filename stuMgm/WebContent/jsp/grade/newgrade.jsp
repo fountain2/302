@@ -15,7 +15,7 @@
 
 		<div class="main-body">
 			
-			<form name="form" method="get" action="addGrade.do"
+			<form name="form" method="POST" action="addGrade.do"
 				onsubmit="return checkForm();">
 				<input type="hidden" name="flag" value="finish" />
 				<input type="hidden" name="stuNumber" value="${student.stuNumber }" />
@@ -44,7 +44,7 @@
 					
 					<tr>
 						<td class="first">
-							新增科目：
+							新增课程：
 						</td>
 						<td>
 							<input type="text" name="grade_numCourse" maxlength="20" size="30"
@@ -53,7 +53,7 @@
 					</tr>
 					<tr>
 						<td class="first">
-							分数：
+							课程分数：
 						</td>
 						<td>
 							<input type="text" name="grade_numScore" maxlength="20" size="30"
@@ -77,7 +77,7 @@
 						<td colspan="2" class="note">
 							<span class="title">注 意 事 项 ：</span>
 							<br />
-							
+							请仔细核对学生的成绩，确认所输入的信息是正确的，如果本次输入错了，保存成功后，还可以继续修改。
 						</td>
 					</tr>
 

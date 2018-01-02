@@ -1,3 +1,7 @@
+function add_student() {
+	location.href = "addStudent.do";
+}
+
 function checkall(form) {
 	var cbxoption;
 	cbxoption = form.elements;
@@ -38,7 +42,7 @@ function deletestudent(form) {
 			}
 		}
 
-		form.studentids.value = stuids;
+		form.studentids = stuids;
 	}
 	if (m == 0) {
 		alert("你没有选中需要删除的学生，请重选！");
@@ -51,8 +55,9 @@ function deletestudent(form) {
 	   }
 	}
 	
-	location.href = "deleteStudent.do?stuids=" + stuids;
+	location.href = "deleteStudent.do?stuids="+stuids+"&rnd="+new Date().getTime();
 }
+
 
 function editstudent(form) {
 	var cbxoption, studid, username;
